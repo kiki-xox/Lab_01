@@ -82,15 +82,20 @@ visitors %>% arrange(desc(n_2022))
 ### Exercise c.
 
 _What are the top 10 most visited attractions in 2021?_
+
+# Note that the head function by default will show n=6
+
 ```{r Ex_c}
 #visitors %>% 
-arrange(desc(n_2021)) %>%
+visitors %>% arrange(desc(n_2021)) %>%
 head(n = 10)
 ```
 
 ## Question 4
 
 _What is the admission charge for the `"National Museum of Scotland"`?_
+
+#Run this chunk of code to see the admin fee is free
 
 ```{r Q4}
 visitors %>% filter(attraction == "National Museum of Scotland")
@@ -101,8 +106,10 @@ visitors %>% filter(attraction == "National Museum of Scotland")
 
 _Which attraction had exactly 565,772 visitors in 2022?_
 
+#Knowsley Safari and Knowsley Hall
+
 ```{r Ex_d}
-#visitors %>% filter(___ == ____)
+visitors %>% filter(n_2022 == 565772)
 ```
 
 ### Exercise e.
@@ -111,13 +118,15 @@ _How many attraction had more than 1 million visitors in 2022?_
 
 ```{r Ex_e}
 #visitors %>% 
-#  filter(____) %>%
-#  count()
+#filter(visitors, n_2022 > 1e+06) %>%
+#count()
 ```
 
 ## Question 5
 
 _How many `"O"`utside attractions are there in the `"Yorkshire and the Humber"` region that gives `"Members"` free admission, which had more than 100,000 visitors in 2022?_
+
+#3 found by running the code
 
 ```{r Q5}
 visitors %>%
@@ -136,7 +145,7 @@ _How many attractions had between 50,000 and 100,000 visitors in 2022?_
 
 ```{r Ex_f}
 #visitors %>% 
-#  ____(
+#  filter(
 #    ______,
 #    ______ ) %>%
 #  count()
@@ -148,8 +157,8 @@ _How many regions have more than 50 tourist attraction in the data set? (Hint: Y
 
 ```{r Ex_g}
 #visitors %>% 
-#  _____(region) %>%
-#  filter(______)
+#count(region) %>%
+#filter(visitors, region > 50)
 ```
 
 
